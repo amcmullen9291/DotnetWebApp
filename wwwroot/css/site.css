@@ -23,3 +23,27 @@ body {
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
 
 }
+
+#pageThreeParagraph{
+  background-color: azure;
+  color: gray;
+  font-size: 36px;
+}
+
+.spacer{
+  width: 100px;
+  background-color: blue;
+}
+
+.spacer a{
+  color: white;
+}
+.spacer2 a{
+  color: white;
+}
+
+
+.spacer2{
+  width: 100px;
+  background-color: orange;
+}
