@@ -4,8 +4,13 @@
     ViewData["Title"] = "Dotnet WebApp";
 }
 
-<div class="text-center">
+<div  id="mainArea" class="text-center">
     <h1 class="display-4">Welcome to C#</h1>
-    <button id="firstButton">Just checkin stuff out</button>
+    <button id="firstButton" OnClick="ShowPopUp2()">Just checkin stuff out</button>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button id="buttonBorder"><asp:Button ID="btnClick" runat="server" Text="Click here" OnClick="ShowPopUp()" OnClientClick="return ShowPopUp();">
+        Click here first
+    </asp:Button>
+    </button>
+
 </div>

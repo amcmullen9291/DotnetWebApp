@@ -1,6 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript">
+    function ShowPopUp() {
+        document.getElementById("firstButton").style.backgroundColor = "purple";
+        document.getElementById("firstButton").style.color = "yellow";
+        document.getElementById("firstButton").style.fontSize = "2em";
+        document.getElementById("firstButton").innerHTML = "now click here";
+        document.getElementById("btnClick"). innerHTML = "....";
+        document.getElementById("btnClick").disabled = "true";
+    }
+
+    function avoidDoubleAppend(){
+        document.getElementById("differentFunction").disabled = "true";
+        let resetButton = document.createElement("button");
+        resetButton.innerText = "reset Page";
+        resetButton.addEventListener("click", resetPage);
+        document.getElementById("mainArea").appendChild(resetButton)
+        return alert("did you do it right? if not, please reload page.");
+    }
+    function resetPage(){
+        window.location.reload();
+    }
+
+    function ShowPopUp2() {
+        let newArea = document.createElement('p');
+        let spacer = document.createElement('hr');
+        let mainArea = document.getElementById("mainArea");
+        mainArea.appendChild(spacer);
+        mainArea.append(newArea);
+        newArea.id  = "newAreaId";
+        newArea.innerHTML = "Second C# event handled...";
+        newArea.style.color = "red";
+        newArea.style.border = "2em double red";
+        document.getElementById("btnClick").innerHTML = "nice";
+        document.getElementById("btnClick").style.fontSize = "2em";
+        document.getElementById("btnClick").style.color = "white";
+        document.getElementById("btnClick").style.backgroundColor = "blue";
+        document.getElementById("buttonBorder").style.border = "5px solid gray";
+        document.getElementById("buttonBorder").style.backgroundColor = "orange";
+        let button1 = document.getElementById("firstButton");
+        button1.id = "differentFunction";
+        document.getElementById("differentFunction").addEventListener("mouseenter", avoidDoubleAppend);
+    }
+</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Welcome to C#</title>
