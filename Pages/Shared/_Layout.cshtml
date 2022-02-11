@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script type="text/javascript">
+    var clicked = "false";
     function ShowPopUp() {
         document.getElementById("firstButton").style.backgroundColor = "purple";
         document.getElementById("firstButton").style.color = "yellow";
@@ -9,15 +10,28 @@
         document.getElementById("firstButton").innerHTML = "now click here";
         document.getElementById("btnClick"). innerHTML = "....";
         document.getElementById("btnClick").disabled = "true";
+        clicked = "true";
     }
 
     function avoidDoubleAppend(){
-        document.getElementById("differentFunction").disabled = "true";
-        let resetButton = document.createElement("button");
-        resetButton.innerText = "reset Page";
-        resetButton.addEventListener("click", resetPage);
-        document.getElementById("mainArea").appendChild(resetButton)
-        return alert("did you do it right? if not, please reload page.");
+        document.getElementById("differentFunction").disabled = true;
+        if(clicked == "true"){
+            let resetButton = document.createElement("button");
+            resetButton.innerText = "reset Page";
+            resetButton.addEventListener("click", resetPage);
+            document.getElementById("mainArea").appendChild(resetButton)
+            
+            return alert("did you do it right?");
+        }
+        if(clicked == "false"){
+            let resetButton = document.createElement("button");
+            resetButton.innerText = "Try again";
+            resetButton.addEventListener("click", resetPage);
+            document.getElementById("mainArea").appendChild(resetButton)
+
+            return alert("Let's try that one more time!");
+        }
+
     }
     function resetPage(){
         window.location.reload();
